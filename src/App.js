@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-
-const organise = str => {
-  return str
-    .toLowerCase()
-    .split("")
-    .sort()
-    .join("")
-    .trim();
-};
+import ChosenWord from "./components/ChosenWord";
 
 class App extends Component {
   render() {
@@ -16,6 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <p>Stop! Anagram time!</p>
+          <ChosenWord />
         </header>
       </div>
     );
