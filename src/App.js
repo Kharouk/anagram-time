@@ -7,8 +7,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>Stop! Anagram time!</p>
+          <p>Stop! Anagrammer time!</p>
           <ChosenWord />
+          <p style={{ fontSize: 13 }}>
+            Created for a Tech Test by{" "}
+            <a href="https://github.com/kharouk" style={{ color: "inherit" }}>
+              Alex Kharouk.
+            </a>
+          </p>
         </header>
       </div>
     );
