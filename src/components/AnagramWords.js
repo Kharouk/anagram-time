@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 var myText = require("../assets/wordlist.txt");
 
-// Global array to push sorted words:
-let anagrammedWords = [];
-
 // Component that finds and Displays Anagram Words
 export default class AnagramWords extends Component {
   state = {
     anagramVisible: false,
     fetchWords: "",
-    loading: true
+    loading: true,
+    anagrammedWords: []
   };
 
   organiseWord = str => {
@@ -31,7 +29,7 @@ export default class AnagramWords extends Component {
 
   findAnagramWords = () => {
     // Empty out Array:
-    anagrammedWords = [];
+    this.state.anagrammedWords = [];
     //Set state variable:
     const words = this.state.fetchWords;
     // Sort User's input:
@@ -41,7 +39,7 @@ export default class AnagramWords extends Component {
     words.forEach(word => {
       const sortedWord = this.organiseWord(word);
       if (sortedWord === userInput) {
-        anagrammedWords.push(word);
+        this.state.anagrammedWords.push(word);
       }
       this.setState({ anagramVisible: true });
     });
@@ -49,8 +47,7 @@ export default class AnagramWords extends Component {
 
   // Display correct Matches:
   displayAnagramWords = () => {
-    const anagrams = anagrammedWords;
-    return <p>{anagrams.join(", ")}</p>;
+    return <p>{this.state.anagrammedWords.join(", ")}</p>;
   };
 
   render() {

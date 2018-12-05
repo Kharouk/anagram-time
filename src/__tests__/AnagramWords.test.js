@@ -14,11 +14,21 @@ describe("Anagram Words", () => {
     wrapper = shallow(<AnagramWords />);
     instance = wrapper.instance();
     instance.props = { userWord: "Alex" };
+    instance.state = { fetchWords: ["toe", "act", "car", "cat"] };
   });
 
   test("#displayAnagramWords", () => {
-    instance.state = { fetchWords: ["Xela", "Beast", "Turn"] };
     wrapper.find("button").simulate("click");
     expect(instance.state.anagramVisible).toEqual(true);
+  });
+
+  test("#organiseString", () => {
+    expect(instance.organiseWord(instance.props.userWord)).toEqual("aelx");
+  });
+
+  test("#findAnagramWords", () => {
+    instance.props = { userWord: "cat" };
+    instance.findAnagramWords();
+    expect(instance.state.anagrammedWords).toEqual(["act", "cat"]);
   });
 });
