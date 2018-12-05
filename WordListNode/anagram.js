@@ -1,4 +1,5 @@
 const fs = require("fs");
+
 let anagramWords = [];
 let displayWords = [];
 
@@ -6,8 +7,6 @@ const getWords = () => {
   const words = fs.readFileSync(__dirname + "/wordlist.txt").toString();
   anagramWords = words.split("\n");
 };
-
-const mainWord = "kite";
 
 const organiseWord = str => {
   return str
@@ -27,7 +26,9 @@ const findAnagramWords = chosenWord => {
       displayWords.push(word);
     }
   });
-  console.log(displayWords);
+  console.log(displayWords.join(", "));
 };
+
+const mainWord = "party";
 
 findAnagramWords(mainWord);

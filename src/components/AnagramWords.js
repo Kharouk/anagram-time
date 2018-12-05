@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+var myText = require("../assets/wordlist.txt");
 
 // Template example to see anagrams easily:
 const words = ["pates", "peats", "septa", "spate", "tapes", "tepas", "pizza"];
@@ -19,13 +20,21 @@ const organiseWord = str => {
 // Component that finds and Displays Anagram Words
 export default class AnagramWords extends Component {
   state = {
-    anagramVisible: false
+    anagramVisible: false,
+    text: ""
   };
+
+  componentDidMount() {
+    fetch(myText)
+      .then(r => r.text())
+      .then(text => {
+        console.log(text);
+      });
+  }
 
   findAnagramWords = () => {
     // Empty out Array:
     anagrammedWords = [];
-
     const userInput = organiseWord(this.props.userWord);
     words.forEach(word => {
       const sortedWord = organiseWord(word);
@@ -47,6 +56,7 @@ export default class AnagramWords extends Component {
         <h1>{this.props.userWord}</h1>
         <button onClick={this.findAnagramWords}>Find Anagrams</button>
         {this.state.anagramVisible && this.displayAnagramWords()}
+        {this.state.text}
       </div>
     );
   }
