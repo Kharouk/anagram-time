@@ -43,6 +43,8 @@ I was able to complete the challenge requirements yet I didn't have enough time 
 
 I'd love to also test and mock Fetch. Currently I am using it in my `componentWillMount` and it's setting state. That's a test I'll be working on next.
 
+I also want to work on optimisation when finding the correct anagrams. Currently, there is a delay when the user inputs a word and gets a list back. If I could somehow get that time down, that'll be great.
+
 ## Scripts
 
 In the project directory, you can run:
