@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 var myText = require("../assets/wordlist.txt");
 
-// Template example to see anagrams easily:
-const words = ["pates", "peats", "septa", "spate", "tapes", "tepas", "pizza"];
-
 // Global array to push sorted words:
 let anagrammedWords = [];
 
@@ -21,21 +18,27 @@ const organiseWord = str => {
 export default class AnagramWords extends Component {
   state = {
     anagramVisible: false,
-    text: ""
+    fetchWords: "",
+    loading: true
   };
 
   componentDidMount() {
     fetch(myText)
       .then(r => r.text())
       .then(text => {
-        console.log(text);
+        this.state.fetchWords = text.split("\n");
       });
   }
 
   findAnagramWords = () => {
     // Empty out Array:
     anagrammedWords = [];
+    //Set state variable:
+    const words = this.state.fetchWords;
+    // Sort User's input:
     const userInput = organiseWord(this.props.userWord);
+
+    // Find word anagrams based on input:
     words.forEach(word => {
       const sortedWord = organiseWord(word);
       if (sortedWord === userInput) {
@@ -45,6 +48,7 @@ export default class AnagramWords extends Component {
     });
   };
 
+  // Display correct Matches:
   displayAnagramWords = () => {
     const anagrams = anagrammedWords;
     return <p>{anagrams.join(", ")}</p>;
@@ -56,7 +60,6 @@ export default class AnagramWords extends Component {
         <h1>{this.props.userWord}</h1>
         <button onClick={this.findAnagramWords}>Find Anagrams</button>
         {this.state.anagramVisible && this.displayAnagramWords()}
-        {this.state.text}
       </div>
     );
   }
