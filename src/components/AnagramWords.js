@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-// Template to find find words:
+// Template example to see anagrams easily:
 const words = ["pates", "peats", "septa", "spate", "tapes", "tepas", "pizza"];
 
 // Global array to push sorted words:

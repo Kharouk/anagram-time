@@ -1,5 +1,5 @@
 # Anagram Time!
-Losing at Scrabble? Wanting to change up your vocabulary? Check out this Anagram!
+Losing at Scrabble? Wanting to change up your vocabulary? Check out this Anagram Application!
 
 ## Deployed Here:
 
@@ -28,6 +28,8 @@ To complete my final goal, I had to create an application where a user can provi
 
 ## Development Process - Wednesday (30 Minutes):
 My focuses in this period were **writing tests**, **refactoring**, and **importing the wordlist** file.
+
+I used Jest and Enzyme for Testing, two testing frameworks I am new to.
 
 ## Available Scripts
 
