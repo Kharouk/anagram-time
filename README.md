@@ -2,6 +2,7 @@
 Losing at Scrabble? Wanting to change up your vocabulary? Check out this Anagram Application!
 
 ## Deployed Here:
+[1]
 
 ## Development Process - Tuesday (40 Minutes):
 I started the challenge on Tuesday evening, and I focused on three goals. **Do I understand the problem**, **what tech will help me solve it**, **can I get a rough version of it working?**
@@ -27,9 +28,13 @@ However, I understood that solving a problem in languages I'm not fluent in coul
 To complete my final goal, I had to create an application where a user can provide any array of words to be able to see if they are anagrams. However, I didn't want to focus on how to import that wordlist text file and compare it to 30,000 words. I will start simple. Just six words. I was successful, and after 40 minutes I decided to use my remaining time to figure out if I can import the `wordlist.txt` file. 
 
 ## Development Process - Wednesday (30 Minutes):
-My focuses in this period were **writing tests**, **refactoring**, and **importing the wordlist** file.
+My focuses in this period were **refactoring** and **importing the wordlist** file.
 
-I used Jest and Enzyme for Testing, two testing frameworks I am new to.
+I had significant trouble importing the Word List into my React application. It was difficult mostly because I tried using File System or `fs` to get it to work. I even created a separate application in this tech test, to get it to work using Node. However, when I tried to translate it to the client-side, it failed. I spent the majority of my time researching a solution, only to come across `fetch` as time was running out.
+
+I was able to import the Word List, and now my application is able to fetch the correct words. Please check out the deployed application [here][1] to test the features.
+
+As I started going over the one-hour limit, I refactored. However, I decided to stop and now use master as my solution. I have created a separate branch where I continue to work on this challenge. I loved doing it in React but struggled with testing my components. They will be tested in that branch.
 
 ## Available Scripts
 
