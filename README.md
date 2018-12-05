@@ -34,11 +34,16 @@ I had significant trouble importing the Word List into my React application. It 
 
 I was able to import the Word List, and now my application is able to fetch the correct words. Please check out the deployed application [here][1] to test the features.
 
-As I started going over the one-hour limit, I refactored. However, I decided to stop and now use the master branch as my solution. However, I have created a separate branch where I continue to work on this challenge. I loved doing it in React but struggled with testing my components. They are tested in that branch.
+As I started going over the one-hour limit, I refactored for a bit before I created a separate branch where I continue to work on this challenge. I loved doing it in React however since it was new to me, testing my code took longer than it needed.
 
-In regards to testing, the big focuses I have is stubbing out the 300k lines of words from the word list and making sure my component methods are working. Enzyme will also be used to make sure my feature tests are working correctly. 
+I have used both Jest and Enzyme for testing.
 
-## Available Scripts
+## Development Process - Beyond:
+I was able to complete the challenge requirements yet I didn't have enough time to fully refactor my code and have all my tests complete. What I would do know is continue refactoring my components. My `AnagramWords` components is becoming a bit long so I want to take out some of the methods, and have them passed to the component. This way, if I had other components that could use them I could easily pass it to them as well. I would also refactor the `ChosenWord` component so `AnagramWords` doesn't depend on it, and rather have the `App` Component render both.
+
+I'd love to also test and mock Fetch. Currently I am using it in my `componentWillMount` and it's setting state. That's a test I'll be working on next.
+
+## Scripts
 
 In the project directory, you can run:
 
