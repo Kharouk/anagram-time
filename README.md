@@ -45,6 +45,8 @@ I'd love to also test and mock Fetch. Currently I am using it in my `componentWi
 
 I also want to work on optimisation when finding the correct anagrams. Currently, there is a delay when the user inputs a word and gets a list back. If I could somehow get that time down, that'll be great.
 
+Lastly, I'd focus on improving my method to sort words so they can be compared to user input. I would love to take on the challenge where a word uses an apostraphe or a hyphen, and at the moment, the application doesn't take them into consideration. However I am sure it is possible. 
+
 ## Scripts
 
 In the project directory, you can run:
